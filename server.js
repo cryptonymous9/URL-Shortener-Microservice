@@ -10,12 +10,9 @@ var app = express();
 /** this project needs a db !! **/
 // mongoose.connect(process.env.MONGOLAB_URI);
 app.use(cors());
-//mongodb+srv://nidhin:123@cluster0-xuqnp.gcp.mongodb.net/test?retryWrites=true,{ useNewUrlParser: true }
-// mongo "mongodb+srv://cluster0-xuqnp.gcp.mongodb.net/test"     --username nidhin
-
 
 ////  connecting Mongodb
-mongoose.connect("mongodb+srv://nidhin:apple@cluster0-xuqnp.gcp.mongodb.net/test?retryWrites=true", {
+mongoose.connect("mongodb+srv://<username>:<passwd>@cluster0-xuqnp.gcp.mongodb.net/test?retryWrites=true", {
   useNewUrlParser: true
 }).catch((err) => {
   console.log(err);
@@ -142,8 +139,8 @@ app.get("/api/hello", function (req, res) {
 
 
 // Defining port and listening ;)
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8000;
 
-app.listen(port, function () {
+app.listen(8000, function () {
   console.log('Node.js listening ... ' + port);
 })
